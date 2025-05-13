@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Products | TradeCom</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+<body>
+
+  <header class="main-header">
+    <button id="sidebarToggle">☰ Menu</button>
+    <h1>TradeCom</h1>
+    <img src="../assets/user.png" alt="User" class="profile-pic">
+  </header>
+
+  <aside class="sidebar">
+    <h2>☰ Menu</h2>
+    <nav>
+      <ul>
+      <li><a href="browse.html">Home</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="orders.html">Orders</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="product-grid">
+
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search for products or shops..." />
+      <button onclick="handleSearch()">🔍</button>
+    </div>
+
+    <h2>Browse Products</h2>
+    <div id="product-container" class="product-grid"></div>
+
+    <h2>Nearby Shops & Services</h2>
+    <div id="map" style="height: 500px; width: 100%; margin-bottom: 20px;"></div>
+
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 TradeCom. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/browse.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="/js/browse.js"></script>
+  <script>
+     // Load map
+  navigator.geolocation.getCurrentPosition(position => 
+    {const latitude  = position.coords;
+        const   longitude  = position.coords;
+    const map = L.map('map').setView([latitude, longitude], 14);
+    L.tileLayer('https://s.tile.openstreetmap.org/z/x/y.png').addTo(map);
+
+    // Mark user location
+    L.marker([latitude, longitude]).addTo(map)
+      .bindPopup('You are here').openPopup();
+
+    // Fetch nearby shops
+    fetch(`/api/shops/nearby?lat={latitude}&lng=${longitude}`)
+      .then(res => res.json())
+      .then(shops => {
+        shops.forEach(shop => {
+          const [lng, lat] = shop.location.coordinates;
+          shop.location.coordinates.bindPopup(`<b>{shop.name}</b><br>${shop.category}`);
+        });
+      });
+  });
+  </script>
+  <script src="../js/browse.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sidebar = document.querySelector(".sidebar");
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const overlay = document.querySelector(".sidebar-overlay");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+        overlay.classList.toggle("visible");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("hidden");
+        overlay.classList.remove("visible");
+      });
+    });        
+  </script>
+</body>
+
+</html>

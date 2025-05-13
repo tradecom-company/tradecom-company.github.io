@@ -1,0 +1,135 @@
+<!-- client/pages/business-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>TradeCom | Business Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<header>
+  <button id="sidebarToggle">☰ Menu</button>
+  <h1>TradeCom</h1>
+</header>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>☰ Menu</h2>
+      <ul>
+        <li><a href="#">My Products</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1>Business Panel</h1>
+        <img src="../assets/profile-placeholder.png" alt="Profile" class="profile-img" />
+      </header>
+
+      <section id="subscription-section">
+        <p>⏳ Subscription Expires In: <span id="countdown-timer"></span></p>
+        <div id="expiry-warning" class="warning-banner" style="display: none;">
+          ⚠️ Subscription is almost expired! Renew now.
+        </div>
+        <button id="renew-btn" style="display: none;">Renew Subscription</button>
+      </section>
+
+
+      <!-- Upload Advertisement Modal -->
+      <div id="adFormContainer" style="display: none;">
+        <form id="adUploadForm" enctype="multipart/form-data">
+          <h2>Post Advertisement</h2>
+          <input type="text" name="title" placeholder="Ad Title" required>
+          <textarea name="description" placeholder="Short description" required></textarea>
+          <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="Product">Product</option>
+            <option value="Service">Service</option>
+            <option value="Innovation">Innovation</option>
+          </select>
+          <input type="file" name="media" accept="image/*,video/*" required>
+          <button type="submit">Upload Advertisement</button>
+        </form>
+      </div>
+
+      <!-- Button to show form -->
+      <button onclick="document.getElementById('adFormContainer').style.display='block'">
+        📢 Post Advertisement
+      </button>
+
+      <section>
+
+        <h2>Product Manager</h2>
+        <!-- Add Product Button -->
+ <!-- Add Product Button -->
+<button id="toggleAddProductBtn">Add New Product</button>
+
+<!-- Add Product Form (Initially Hidden) -->
+<div id="addProductForm" style="display: none;">
+  <h3>Add a New Product</h3>
+  <form id="productForm" enctype="multipart/form-data">
+    <label>Product Name (English):</label>
+    <input type="text" id="productNameEn" required />
+
+    <label>Product Name (Swahili):</label>
+    <input type="text" id="productNameSw" />
+
+    <label>Description:</label>
+    <textarea id="productDescription"></textarea>
+
+    <label>Price (Tsh):</label>
+    <input type="number" id="productPrice" required />
+
+    <label>Quantity:</label>
+    <input type="number" id="productQty" required />
+
+    <label>Category:</label>
+    <input type="text" id="productCategory" />
+
+    <label>Product Image:</label>
+    <input type="file" id="productImage" accept="image/*" />
+
+    <button type="submit">Upload Product</button>
+  </form>
+</div>
+      										
+      										
+
+        <!-- Product List Section -->
+         <div class="dashboard-container">
+              <h2>Your Products</h2>
+              <div id="product-list" class="product-list-grid"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/countdown.js"></script>
+<script src="../js/business-dashboard.js"></script>
+  <script src="../js/Shop.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sidebar = document.querySelector(".sidebar");
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const overlay = document.querySelector(".sidebar-overlay");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+        overlay.classList.toggle("visible");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("hidden");
+        overlay.classList.remove("visible");
+      });
+    });        
+  </script>
+</body>
+
+</html>

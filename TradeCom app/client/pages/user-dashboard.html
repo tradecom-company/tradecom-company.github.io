@@ -1,0 +1,72 @@
+
+<!-- client/pages/user-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TradeCom | User Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+										
+						 <header>
+    <button id="sidebarToggle">☰ Menu</button>
+    <h1>TradeCom</h1>
+  </header>			
+										
+  <div class="dashboard-container">
+    <aside class="sidebar">
+    										 <h2>☰ Menu</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Delivery</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1>Welcome, [User]</h1>
+        <img src="../assets/profile-placeholder.png" alt="Profile" class="profile-img" />
+      </header>
+
+      <section id="subscription-section">
+  <p>✅ Your plan: <strong>Free forever</strong></p>
+  <div style="color: green; font-weight: bold;">
+    You can enjoy all features at no cost. 🎉
+  </div>
+</section>
+
+      <section>
+        <h2>Your Orders</h2>
+        <p>You have 0 active orders.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/countdown.js"></script>
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.getElementById("sidebarToggle");
+ const overlay = document.querySelector(".sidebar-overlay");
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("visible");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebar.classList.add("hidden");
+    overlay.classList.remove("visible");
+  });
+});      
+</script>
+</body>
+</html>
+
+
+
+

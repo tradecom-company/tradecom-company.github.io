@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TradeCom - Register</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">TradeCom</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About us</a>
+    </nav>
+  </header>
+
+
+  <div class="register-container">
+    <h1>Create Your Account</h1>
+
+    <label for="accountType">Choose Account Type:</label>
+    <select id="accountType" onchange="showForm()">
+      <option value="">-- Select --</option>
+      <option value="normal">Normal Account</option>
+      <option value="business">Business Account</option>
+      <option value="delivery">Delivery Agent</option>
+    </select>
+
+    <!-- Normal Account Form -->
+    <form id="normalForm" class="hidden" onsubmit="submitForm(event, 'normal')">
+      <h2>Normal Account</h2>
+     <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Business Account Form -->
+    <form id="businessForm" class="hidden" onsubmit="submitForm(event, 'business')">
+      <h2>Business Account</h2>
+      <input type="text" name="businessName" placeholder="Business Name" required />
+      <input type="email" name="email" placeholder="Business Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="text" name="tinNumber" placeholder="TIN Number" required />
+      <input type="text" name="mpesaNumber" placeholder="Mpesa Lipa Namba" />
+      <input type="text" name="bankAccount" placeholder="Bank Account Number" />
+      <select name="businessType" required>
+        <option value="">Business Type</option>
+        <option value="products">Products</option>
+         <option value="services">Services</option>
+      </select>
+      <input type="text" name="category" placeholder="Business Category" required />
+      <textarea name="description" placeholder="Short description" required></textarea>
+      <input type="text" name="country" placeholder="Country" required />
+      <input type="text" name="district" placeholder="District" required />
+      <input type="text" name="ward" placeholder="Ward" />
+      <input type="text" name="street" placeholder="Street" />
+      <input type="text" name="building" placeholder="Building Name/Number" />
+      <input type="file" name="shopImage" accept="image/*" />
+      <label>Choose Payment Plan:</label>
+      <select name="paymentPlan" required>
+        <option value="monthly">5000 Tsh Monthly</option>
+        <option value="6months">20000 Tsh / 6 Months</option>
+        <option value="annually">40000 Tsh Annually</option>
+      </select>
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Delivery Agent Form -->
+    <form id="deliveryForm" class="hidden" onsubmit="submitForm(event, 'delivery')">
+      <h2>Delivery Agent Account</h2>
+      <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="text" name="tinNumber" placeholder="TIN Number" required />
+      <input type="text" name="mpesaNumber" placeholder="Mpesa Lipa Namba" />
+      <input type="text" name="bankAccount" placeholder="Bank Account Number" />
+      <input type="text" name="transportType" placeholder="Type of Transport (e.g. Motorbike)" required />
+      <input type="text" name="preferredRoutes" placeholder="Preferred Routes / Area" required />
+      <label>Choose Payment Plan:</label>
+      <select name="paymentPlan" required>
+        <option value="monthly">3000 Tsh Monthly</option>
+        <option value="6months">15000 Tsh / 6 Months</option>
+        <option value="annually">35000 Tsh Annually</option>
+      </select>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <p style="text-align: center;">Have an account? <a style="color: blue;" href="login.html">Login</a></p>
+
+  <script src="../js/register.js"></script>
+</body>
+</html>
+
+
+

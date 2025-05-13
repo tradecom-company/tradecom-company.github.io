@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TradeCom | Welcome</title>
+  <link rel="stylesheet" href="../css/styles.css"/>
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7045404926549359"
+     crossorigin="anonymous"></script>						
+</head>
+
+<body class="home-body">
+
+  <header class="main-header">
+    <div class="logo">TradeCom</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to TradeCom</h1>
+    <p>Your all-in-one platform to shop, sell, or deliver across Tanzania</p>
+    <div class="hero-buttons">
+      <a href="register.html" class="btn primary">Create Account</a>
+      <a href="browse.html" class="btn">Browse Products</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Buy Products</h3>
+      <p>Shop from trusted sellers nearby and across the country.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Sell Easily</h3>
+      <p>Create a business account and reach new customers with ease.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Earn Delivering</h3>
+      <p>Sign up as a delivery agent and get job opportunities near you.</p>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 TradeCom. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sidebar = document.querySelector(".sidebar");
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const overlay = document.querySelector(".sidebar-overlay");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+        overlay.classList.toggle("visible");
+      });
+
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("hidden");
+        overlay.classList.remove("visible");
+      });
+    });						
+  </script>
+</body>
+
+</html>

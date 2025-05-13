@@ -1,0 +1,72 @@
+
+<!-- client/pages/agent-dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+										<title>TradeCom | Agent Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+    <header>
+    <button id="sidebarToggle">☰ Menu</button>
+    <h1>TradeCom</h1>
+  </header>     
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h2>☰ Menu</h2>
+      <ul>
+        <li><a href="#">Active Deliveries</a></li>
+        <li><a href="#">Past Deliveries</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <h1>Hello, Delivery Partner</h1>
+        <img src="../assets/profile-placeholder.png" alt="Profile" class="profile-img" />
+      </header>
+
+      <section id="subscription-section">
+        <p>⏳ Subscription Expires In: <span id="countdown-timer"></span></p>
+        <div id="expiry-warning" class="warning-banner" style="display: none;">
+          ⚠️ Subscription expiring soon! Renew to continue delivering.
+        </div>
+        <button id="renew-btn" style="display: none;">Renew Now</button>
+      </section>
+
+      <section>
+        <h2>Your Deliveries</h2>
+        <p>No current deliveries assigned.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/countdown.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.getElementById("sidebarToggle");
+ const overlay = document.querySelector(".sidebar-overlay");
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("visible");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebar.classList.add("hidden");
+    overlay.classList.remove("visible");
+  });
+});      
+</script>
+</body>
+</html>
+
+
+
+

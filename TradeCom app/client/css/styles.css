@@ -1,0 +1,452 @@
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6f2ff;
+  color: #333;
+}
+
+a {
+  color: white;
+}
+
+/* Container Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar base style */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+/* Hidden by default */
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* Overlay background (optional) */
+.sidebar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 998;
+}
+
+.sidebar-overlay.visible {
+  display: block;
+}
+
+/* Main Dashboard */
+.dashboard-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #f8fbff;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h1 {
+  color: #004c91;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Subscription Section */
+#subscription-section {
+  background-color: #eaf4ff;
+  border-left: 4px solid #0073e6;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+#countdown-timer {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+.warning-banner {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+#renew-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#renew-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+body.home-body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eaf3ff;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header {
+  background-color: #004080;
+  color: #fff;
+   padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #d0e3ff;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  color: #003366;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  margin: 15px;
+  padding: 12px 20px;
+  border: none;
+  background-color: #0066cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero-buttons .btn:hover {
+  background-color: #004c99;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background-color: #f4f9ff;
+}
+
+.feature-card {
+  margin-bottom: 10px;
+  max-width: 300px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 10px 20px 7px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.main-footer {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+
+
+
+      
+ 
+.form-section, .info-section {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form label {
+  display: block;
+  margin-top: 15px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}          
+
+.btn {
+  height: 30px;
+  width: 120px;
+  border: none;
+  border-radius: 15px;
+  background-color: lightskyblue;
+  margin: 10px;
+  text-align: center;
+}
+
+
+
+
+
+.sidebar {
+  width: 200px;
+  background: #002f6c;
+  color: white;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.hidden {
+  display: none;
+}
+
+.profile-pic {
+  width: 32px;
+  border-radius: 50%;
+  float: right;
+}
+
+.product-grid {
+  margin-left: 0;
+  padding: 20px;
+}
+
+.product-category {
+  margin-bottom: 40px;
+}
+
+.product-list {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.product-card {
+  min-width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+#search-input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+
+
+
+/* Container for registration form */
+.registration-container {
+  max-width: 700px;
+  margin: 60px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+/* Form headings */
+.registration-container h2 {
+  color: #005bb5;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Form inputs */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 4px rgba(0, 119, 204, 0.3);
+}
+
+/* Submit button */
+button[type="submit"] {
+  margin-top: 25px;
+  width: fit-content;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #005bb5;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .registration-container {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+}
+
+
+
+
+.hidden {
+  display: none;
+}
+
+.register-container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+
+  .product-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.product-card {
+  background-color: white;
+  padding: 1rem;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.product-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+
+
+ .filter-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+button {
+  margin-top: 8px;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;    
+}

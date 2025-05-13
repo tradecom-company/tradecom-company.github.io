@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TradeCom - Payment</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script defer src="../js/payment.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Make Your Subscription Payment</h2>
+
+    <form id="paymentForm">
+      <label for="accountType">Account Type:</label>
+      <select id="accountType" name="accountType" required>
+        <option value="business">Business</option>
+        <option value="delivery">Delivery Agent</option>
+      </select>
+
+      <label for="phone">Phone Number (Safaricom):</label>
+      <input type="tel" id="phone" name="phone" placeholder="07XXXXXXXX" required />
+
+      <label for="plan">Choose Your Plan:</label>
+    <select id="plan" name="plan" required>
+        <option value="monthly">Monthly</option>
+        <option value="6months">6 Months</option>
+        <option value="yearly">Yearly</option>
+      </select>
+
+      <button type="submit">Pay with M-Pesa</button>
+    </form>
+
+    <div id="paymentStatus" class="status"></div>
+  </div>
+</body>
+</html>
+
+
+

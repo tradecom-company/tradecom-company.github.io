@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results - TradeCom</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="search-header">
+    <h2>Search Results</h2>
+    <button onclick="history.back()">← Back</button>
+  </div>
+
+  <div id="results-grid" class="results-grid">
+<div class="filter-bar">
+  <label for="category-filter">Category:</label>
+  <select id="category-filter" onchange="applyFilters()">
+    <option value="">All</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Groceries">Groceries</option>
+    <!-- Add more categories as needed -->
+  </select>
+</div>
+
+  </div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q');
+  let products = [];
+
+  async function loadProducts() {
+    const res = await fetch(`/api/products/search?q=${query}`);
+    products = await res.json();
+    renderProducts(products);
+  }
+
+  function renderProducts(productList) {
+    const grid = document.getElementById('results-grid');
+    grid.innerHTML = "";
+
+    if (productList.length === 0) {
+      grid.innerHTML = "<p>No results found.</p>";
+      return;
+    				productList.forEach(product => 
+      const card = document.createElement('div');
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="{product.imageUrl}" alt="product.name" />
+        <h3>{product.name}</h3>
+        <p>product.category</p>
+        <p>{product.price} TZS</p>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function applyFilters() {
+    const selectedCategory = document.getElementById('category-filter').value;
+    const filtered = selectedCategory
+      ? products.filter(p => p.category === selectedCategory)
+      : products;
+    renderProducts(filtered);
+  }
+
+  loadProducts();
+</script>
+(					
+</body>
+</html>
+
+										
+

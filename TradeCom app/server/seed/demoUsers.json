@@ -1,0 +1,86 @@
+[
+    {
+      "accountType": "business",
+      "businessName": "Ezo Products",
+      "email": "ezo@example.com",
+      "phone": "0754000001",
+      "password": "Code@12345",
+      "tinNumber": "123456789",
+      "paymentInfo": {
+        "mpesa": "123456",
+        "bankAccount": "00123456789"
+      },
+      "businessType": "products",
+      "category": "Beauty",
+      "description": "Affordable beauty stuff and bags",
+      "location": {
+        "country": "Tanzania",
+        "region": "Mbeya",
+        "district": "Mbeya city",
+        "ward": "Iyole",
+        "street": "Stendi ya usangu Street"
+      }
+    },
+    {
+      "accountType": "business",
+     "businessName": "Mbeya Hardware Supplies",
+      "email": "hardware@example.com",
+      "phone": "0754000002",
+      "password": "hashed_password_here",
+      "tinNumber": "123456780",
+      "paymentInfo": {
+        "mpesa": "123457",
+        "bankAccount": "00123456790"
+      },
+      "businessType": "products",
+      "category": "Hardware",
+      "description": "Building and construction tools",
+      "location": {
+        "country": "Tanzania",
+        "region": "Mbeya",
+        "district": "Mbeya Urban",
+        "ward": "Mwakibete",
+        "street": "Kadege Road"
+      }
+    },
+    {
+      "accountType": "business",
+      "businessName": "Graphic Genius",
+      "email": "graphic@example.com",
+      "phone": "0754000010",
+      "password": "hashed_password_here",
+      "tinNumber": "123456781",
+      "paymentInfo": {
+        "mpesa": "123458",
+        "bankAccount": "00123456791"
+      },
+      "businessType": "services",
+      "category": "Graphic Design",
+      "description": "Creative branding and design",
+      "location": {
+        "country": "Tanzania",
+        "region": "Mbeya",
+        "district": "Mbeya Urban",
+        "ward": "Sisimba",
+        "street": "Independence Street"
+      }
+    },
+    {
+      "accountType": "delivery",
+      "firstName": "Juma",
+      "lastName": "Transporter",
+      "email": "juma.delivery@example.com",
+     "phone": "0754000020",
+      "password": "hashed_password_here",
+      "tinNumber": "123456782",
+      "paymentInfo": {
+        "mpesa": "123459",
+        "bankAccount": "00123456792"
+      },
+      "transportType": "Motorbike",
+      "preferredRoutes": "Mbeya Urban"
+    }
+  ]
+  
+  
+  
